@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { Observable } from 'rxjs';
-import { GetCategoriesResponse } from 'src/app/models/interfaces/categories/responses/getCategoriesResponse';
+import { GetCategoriesResponse } from 'src/app/models/interfaces/categories/responses/GetCategoriesResponse';
 import { environment } from 'src/environments/environment';
 
 @Injectable({

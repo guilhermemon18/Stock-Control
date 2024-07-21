@@ -3,7 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { Subject, takeUntil } from 'rxjs';
-import { GetCategoriesResponse } from 'src/app/models/interfaces/categories/responses/getCategoriesResponse';
+import { GetCategoriesResponse } from 'src/app/models/interfaces/categories/responses/GetCategoriesResponse';
 import { CategoriesService } from 'src/app/services/user/categories/categories.service';
 
 @Component({
