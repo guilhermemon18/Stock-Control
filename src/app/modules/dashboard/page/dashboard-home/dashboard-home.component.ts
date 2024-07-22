@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ChartData, ChartOptions } from 'chart.js';
 import { MessageService } from 'primeng/api';
 import { Subject, takeUntil } from 'rxjs';
-import { GetAllProductsResponse } from 'src/app/models/interfaces/products/request/response/GetAllProductsResponse';
+import { GetAllProductsResponse } from 'src/app/models/interfaces/products/response/GetAllProductsResponse';
 import { ProductsService } from 'src/app/services/user/products/products.service';
 import { ProductsDataTransferService } from 'src/app/shared/services/products/products-data-transfer.service';
 

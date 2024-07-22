@@ -22,7 +22,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { ProductsHomeComponent } from './page/products-home/products-home.component';
 import { PRODUCTS_ROUTES } from './products.routing';
 import { ProductsTableComponent } from './components/products-table/products-table.component';
-import { ProductFormComponent } from './components/products-table/product-form/product-form.component';
+import { ProductFormComponent } from './components/product-form/product-form.component';
 
 
 @NgModule({
