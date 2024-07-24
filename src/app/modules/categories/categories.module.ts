@@ -21,11 +21,13 @@ import { ConfirmationService } from 'primeng/api';
 import { CategoriesHomeComponent } from './page/categories-home/categories-home.component';
 import { CATEGORIES_ROUTES } from './categories.routing';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { CategoriesTableComponent } from './components/categories-table/categories-table.component';
 
 
 @NgModule({
   declarations: [
-    CategoriesHomeComponent
+    CategoriesHomeComponent,
+    CategoriesTableComponent
   ],
   imports: [
     CommonModule,
