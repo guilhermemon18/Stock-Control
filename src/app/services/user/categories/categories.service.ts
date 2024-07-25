@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 })
 export class CategoriesService {
   private API_URL = environment.API_URL;
-  private JWT_TOKEN =  this.cookie.get("USER_INFO");
+  private JWT_TOKEN = this.cookie.get("USER_INFO");
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
@@ -27,4 +27,15 @@ export class CategoriesService {
       this.httpOptions
     );
   }
+
+  deleteCategory(requestDatas: { category_id: string }): Observable<void> {
+    return this.http.delete<void>(
+      `${this.API_URL}/category/delete`, {
+      ...this.httpOptions,
+      params: {
+        category_id: requestDatas?.category_id,
+      },
+    });
+  }
+
 }
