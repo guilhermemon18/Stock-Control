@@ -1,11 +1,13 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ConfirmationService, MessageService } from 'primeng/api';
-import { DialogService } from 'primeng/dynamicdialog';
+import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { Subject, takeUntil } from 'rxjs';
 import { DeleteCategoryAction } from 'src/app/models/interfaces/categories/event/DeleteCategoryAction';
 import { GetCategoriesResponse } from 'src/app/models/interfaces/categories/responses/GetCategoriesResponse';
+import { EventAction } from 'src/app/models/interfaces/products/event/EventAction';
 import { CategoriesService } from 'src/app/services/user/categories/categories.service';
+import { CategoryFormComponent } from '../../components/category-form/category-form.component';
 
 @Component({
   selector: 'app-categories-home',
@@ -16,6 +18,7 @@ export class CategoriesHomeComponent implements OnInit, OnDestroy {
 
   private readonly destroy$: Subject<void> = new Subject();
   public categoriesDatas: Array<GetCategoriesResponse> = [];
+  private ref!: DynamicDialogRef;
 
   constructor(
     private categoriesService: CategoriesService,
@@ -93,6 +96,26 @@ export class CategoriesHomeComponent implements OnInit, OnDestroy {
         });
 
       this.getAllCategories();
+    }
+  }
+
+  handleCategoryAction(event: EventAction): void {
+    if(event){
+      this.ref = this.dialogSevice.open(CategoryFormComponent, {
+        header: event?.action,
+        width: '70%',
+        contentStyle: { overflow: 'auto' },
+        baseZIndex: 10000,
+        maximizable: true,
+        data: {
+          event: event,
+        },
+      });
+      this.ref.onClose
+      .pipe(takeUntil(this.destroy$))
+      .subscribe({
+        next: () => this.getAllCategories(),
+      })
     }
   }
 

@@ -3,4 +3,5 @@
 <app-categories-table
   [categories]="categoriesDatas"
   (deleteCategoryEvent)="handleDeleteCategoryAction($event)"
+  (categoryEvent)="handleCategoryAction($event)"
 ></app-categories-table>
