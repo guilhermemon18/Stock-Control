@@ -141,9 +141,9 @@
             <td>{{ product?.amount }}</td>
             <td>{{ product?.price | currency : "BRL" }}</td>
             <td [pTooltip]="product?.description" tooltipPosition="top">
-              {{ product?.description }}
+              {{ product?.description | shorten : 25 }}
             </td>
-            <td> {{product?.category?.name}} </td>
+            <td>{{ product?.category?.name }}</td>
             <td>
               <div
                 class="flex justify-content-center gap-3 align-content-center align-items-center"
