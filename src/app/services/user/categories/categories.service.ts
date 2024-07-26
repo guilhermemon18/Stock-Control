@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
-import { Observable } from 'rxjs';
+import { Observable, ObservedValueOf } from 'rxjs';
 import { GetCategoriesResponse } from 'src/app/models/interfaces/categories/responses/GetCategoriesResponse';
 import { environment } from 'src/environments/environment';
 
@@ -45,6 +45,19 @@ export class CategoriesService {
         category_id: requestDatas?.category_id,
       },
     });
+  }
+
+  editCategoryName(requestDatas: { name: string, category_id: string }): Observable<void> {
+    return this.http.put<void>(
+      `${this.API_URL}/category/edit`,
+      { name: requestDatas?.name },
+      {
+        ... this.httpOptions,
+        params: {
+          category_id: requestDatas?.category_id,
+        },
+      },
+    );
   }
 
 }
