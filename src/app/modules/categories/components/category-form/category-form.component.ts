@@ -5,7 +5,7 @@ import { DynamicDialogConfig } from 'primeng/dynamicdialog';
 import { Subject, subscribeOn, takeUntil } from 'rxjs';
 import { EditCategoryAction } from 'src/app/models/interfaces/categories/event/EditCategoryAction';
 import { CategoryEvent } from 'src/app/models/interfaces/enums/categories/CategoryEvent';
-import { CategoriesService } from 'src/app/services/user/categories/categories.service';
+import { CategoriesService } from 'src/app/services/categories/categories.service';
 
 @Component({
   selector: 'app-category-form',

@@ -6,7 +6,7 @@ import { Subject, takeUntil } from 'rxjs';
 import { DeleteCategoryAction } from 'src/app/models/interfaces/categories/event/DeleteCategoryAction';
 import { GetCategoriesResponse } from 'src/app/models/interfaces/categories/responses/GetCategoriesResponse';
 import { EventAction } from 'src/app/models/interfaces/products/event/EventAction';
-import { CategoriesService } from 'src/app/services/user/categories/categories.service';
+import { CategoriesService } from 'src/app/services/categories/categories.service';
 import { CategoryFormComponent } from '../../components/category-form/category-form.component';
 
 @Component({
